@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<launch>
+    <node pkg="tf" type="static_transform_publisher" name="static_tf_node" 
+          args="0.5 0 0 0 0 0 base_link lidar_1 30">
+    </node>
+</launch>
