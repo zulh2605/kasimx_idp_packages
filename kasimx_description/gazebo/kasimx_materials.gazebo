@@ -1,0 +1,169 @@
+<?xml version="1.0" ?>
+<robot name="kasimx" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="white_color" value="Gazebo/White" />
+<xacro:property name="grey_color" value="Gazebo/Grey" />
+<xacro:property name="red_color" value="Gazebo/Red" />
+<xacro:property name="black_color" value="Gazebo/Black" />
+<xacro:property name="blue_color" value="Gazebo/Blue" />
+<xacro:property name="silver_color" value="Gazebo/Silver" />
+
+
+
+<gazebo reference="base_link">
+  <material>${white_color}</material>
+</gazebo>
+
+<gazebo reference="bottom_panel_1">
+  <material>${white_color}</material>
+</gazebo>
+
+<gazebo reference="right_panel_1">
+  <material>${white_color}</material>
+</gazebo>
+
+<gazebo reference="left_panel_1">
+  <material>${white_color}</material>
+</gazebo>
+
+<gazebo reference="back_panel_1">
+  <material>${white_color}</material>
+</gazebo>
+
+<gazebo reference="front_panel_1">
+  <material>${white_color}</material>
+</gazebo>
+
+<gazebo reference="top_panel_1">
+  <material>${white_color}</material>
+</gazebo>
+
+<gazebo reference="right_motor_1">
+  <material>${white_color}</material>
+</gazebo>
+
+<gazebo reference="left_motor_1">
+  <material>${white_color}</material>
+</gazebo>
+
+<gazebo reference="right_hub_1">
+  <material>${white_color}</material>
+</gazebo>
+
+<gazebo reference="left_hub_1">
+  <material>${white_color}</material>
+</gazebo>
+
+<gazebo reference="right_wheel_1">
+  <material>${black_color}</material>
+</gazebo>
+
+<gazebo reference="right_tyre_1">
+  <material>${blue_color}</material>
+</gazebo>
+
+<gazebo reference="left_wheel_1">
+  <material>${black_color}</material>
+</gazebo>
+
+<gazebo reference="left_tyre_1">
+  <material>${blue_color}</material>
+</gazebo>
+
+<gazebo reference="front_caster_1">
+  <material>${black_color}</material>
+</gazebo>
+
+<gazebo reference="back_caster_1">
+  <material>${black_color}</material>
+</gazebo>
+
+<gazebo reference="battery_1">
+  <material>${white_color}</material>
+</gazebo>
+
+<gazebo reference="motor_driver_1">
+  <material>${white_color}</material>
+</gazebo>
+
+<gazebo reference="lidar_1">
+  <material>${black_color}</material>
+</gazebo>
+
+<gazebo reference="stop_button_1">
+  <material>${red_color}</material>
+</gazebo>
+
+<gazebo reference="start_button_1">
+  <material>${red_color}</material>
+</gazebo>
+
+<gazebo reference="lcd_1">
+  <material>${grey_color}</material>
+</gazebo>
+
+<gazebo reference="left_profile_1">
+  <material>${silver_color}</material>
+</gazebo>
+
+<gazebo reference="right_profile_1">
+  <material>${silver_color}</material>
+</gazebo>
+
+<gazebo reference="right_stand_1">
+  <material>${grey_color}</material>
+</gazebo>
+
+<gazebo reference="left_stand_1">
+  <material>${grey_color}</material>
+</gazebo>
+
+<gazebo reference="container_1">
+  <material>${white_color}</material>
+</gazebo>
+
+<gazebo reference="left_rail_1">
+  <material>${grey_color}</material>
+</gazebo>
+
+<gazebo reference="right_rail_1">
+  <material>${grey_color}</material>
+</gazebo>
+
+<gazebo reference="right_arm_base_1">
+  <material>${blue_color}</material>
+</gazebo>
+
+<gazebo reference="left_arm_base_1">
+  <material>${blue_color}</material>
+</gazebo>
+
+<gazebo reference="right_servo_1">
+  <material>${grey_color}</material>
+</gazebo>
+
+<gazebo reference="left_servo_1">
+  <material>${grey_color}</material>
+</gazebo>
+
+<gazebo reference="right_arm1_1">
+  <material>${white_color}</material>
+</gazebo>
+
+<gazebo reference="left_arm1_1">
+  <material>${white_color}</material>
+</gazebo>
+
+<gazebo reference="right_arm2_1">
+  <material>${blue_color}</material>
+</gazebo>
+
+<gazebo reference="left_arm2_1">
+  <material>${blue_color}</material>
+</gazebo>
+
+<gazebo reference="swiper_1">
+  <material>${black_color}</material>
+</gazebo>
+
+</robot>

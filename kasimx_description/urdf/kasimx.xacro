@@ -1,0 +1,1031 @@
+<?xml version="1.0" ?>
+<robot name="kasimx" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!--xacro:include filename="$(find kasimx_description)/urdf/materials.xacro" /-->
+<xacro:include filename="$(find kasimx_description)/urdf/kasimx.trans" />
+<xacro:include filename="$(find kasimx_description)/gazebo/kasimx_materials.gazebo" />
+<xacro:include filename="$(find kasimx_description)/gazebo/kasimx_physics.gazebo" />
+<xacro:include filename="$(find kasimx_description)/gazebo/kasimx_plugins.gazebo" />
+
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-1.3739344889916567e-15 3.4348362224791444e-15 0.11894397766895842"/>
+    <mass value="7.067124025144652"/>
+    <inertia ixx="0.353521" ixy="0.0" ixz="-0.0" iyy="0.312167" iyz="0.0" izz="0.564254"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="bottom_panel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.25 0.0 0.0025000000000000022"/>
+    <mass value="1.3346543232000014"/>
+    <inertia ixx="0.023535" ixy="0.0" ixz="0.0" iyy="0.03019" iyz="-0.0" izz="0.05372"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.25 0.0 -0.0363"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/bottom_panel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.25 0.0 -0.0363"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/bottom_panel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_panel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.25 -0.0025000000000001132 0.007977571539056469"/>
+    <mass value="0.512028"/>
+    <inertia ixx="0.001672" ixy="0.0" ixz="-0.0" iyy="0.013928" iyz="-0.0" izz="0.012258"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.25 0.25 -0.1236"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_panel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.25 0.25 -0.1236"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_panel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_panel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.25000000000000017 0.0025000000000001132 0.007977571539056552"/>
+    <mass value="0.5120280000000009"/>
+    <inertia ixx="0.001672" ixy="-0.0" ixz="0.0" iyy="0.013928" iyz="-0.0" izz="0.012258"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.25 -0.25 -0.1236"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_panel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.25 -0.25 -0.1236"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_panel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="back_panel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0025000000000000577 3.21237203504409e-16 -0.09999999999999996"/>
+    <mass value="0.5940000000000021"/>
+    <inertia ixx="0.014355" ixy="-0.0" ixz="-0.0" iyy="0.001981" iyz="0.0" izz="0.012376"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.25 -0.0 -0.2236"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/back_panel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.25 -0.0 -0.2236"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/back_panel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_panel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0025000000000001132 -6.657868700798987e-17 -0.1"/>
+    <mass value="0.594"/>
+    <inertia ixx="0.014355" ixy="-0.0" ixz="0.0" iyy="0.001981" iyz="-0.0" izz="0.012376"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.25 0.0 -0.2236"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/front_panel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.25 0.0 -0.2236"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/front_panel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="top_panel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.2496575729354535 -0.0027675712447074743 0.0024999999999999745"/>
+    <mass value="1.4389385556317118"/>
+    <inertia ixx="0.029337" ixy="-0.000799" ixz="0.0" iyy="0.028948" iyz="0.0" izz="0.058279"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.25 0.0 -0.2236"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/top_panel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.25 0.0 -0.2236"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/top_panel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_motor_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-9.250694373607902e-05 0.058621437221887646 -3.334204280193431e-05"/>
+    <mass value="0.6791231897367263"/>
+    <inertia ixx="0.001384" ixy="1e-06" ixz="0.0" iyy="0.000169" iyz="1e-06" izz="0.001384"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.0 0.19 -0.0635"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.0 0.19 -0.0635"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_motor_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-9.250694373647066e-05 -0.058621437221737765 -3.334204280096287e-05"/>
+    <mass value="0.6791231897365969"/>
+    <inertia ixx="0.001384" ixy="-1e-06" ixz="0.0" iyy="0.000169" iyz="-1e-06" izz="0.001384"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.19 -0.0635"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.19 -0.0635"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_hub_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-4.740888878197347e-17 -0.016401729519637975 -7.507883204027621e-14"/>
+    <mass value="0.14487195403978284"/>
+    <inertia ixx="2e-05" ixy="0.0" ixz="0.0" iyy="2.6e-05" iyz="0.0" izz="2e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.0 0.1926 -0.0635"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_hub_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.0 0.1926 -0.0635"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_hub_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_hub_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="5.510915142105548e-17 0.016401729519637698 7.507883204027621e-14"/>
+    <mass value="0.14487195403978279"/>
+    <inertia ixx="2e-05" ixy="-0.0" ixz="0.0" iyy="2.6e-05" iyz="0.0" izz="2e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.1926 -0.0635"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_hub_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.1926 -0.0635"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_hub_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-2.58892723674665e-17 0.0011434912352250859 -5.578870698741412e-15"/>
+    <mass value="0.07663659409603471"/>
+    <inertia ixx="7.1e-05" ixy="0.0" ixz="0.0" iyy="0.000134" iyz="-0.0" izz="7.1e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.0 0.2186 -0.0635"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.0 0.2186 -0.0635"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_tyre_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-1.235559146649777e-07 0.012700000997899197 5.808440926846625e-08"/>
+    <mass value="0.09710735179530249"/>
+    <inertia ixx="0.000168" ixy="0.0" ixz="-0.0" iyy="0.000326" iyz="0.0" izz="0.000168"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.0 0.22507 -0.0635"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_tyre_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.0 0.22507 -0.0635"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_tyre_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="7.306309946913887e-17 -0.0011434912352252802 5.523359547510154e-15"/>
+    <mass value="0.07663659409603467"/>
+    <inertia ixx="7.1e-05" ixy="-0.0" ixz="0.0" iyy="0.000134" iyz="-0.0" izz="7.1e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.2186 -0.0635"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.2186 -0.0635"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_tyre_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="1.6046769900502786e-08 -0.01270000076236763 1.333006595521935e-07"/>
+    <mass value="0.0971083856628792"/>
+    <inertia ixx="0.000168" ixy="0.0" ixz="-0.0" iyy="0.000326" iyz="0.0" izz="0.000168"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.22507 -0.0635"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_tyre_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.22507 -0.0635"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_tyre_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_caster_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.15000000000000002 -3.9551695252271197e-17 -0.015191619797525306"/>
+    <mass value="0.2923210076263254"/>
+    <inertia ixx="5.1e-05" ixy="-0.0" ixz="-0.0" iyy="5.1e-05" iyz="-0.0" izz="5.3e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 0.0 -0.0363"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/front_caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 0.0 -0.0363"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/front_caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="back_caster_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.15000000000000002 4.3367883846453143e-17 -0.015191619797525303"/>
+    <mass value="0.29232100762632546"/>
+    <inertia ixx="5.1e-05" ixy="0.0" ixz="0.0" iyy="5.1e-05" iyz="0.0" izz="5.3e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 0.0 -0.0363"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/back_caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 0.0 -0.0363"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/back_caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="battery_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.16999999195146523 7.811237406121638e-05 0.04780046236232269"/>
+    <mass value="7.288252410722732"/>
+    <inertia ixx="0.019289" ixy="-0.0" ixz="-0.0" iyy="0.007997" iyz="-2.6e-05" izz="0.016408"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 0.0 -0.0413"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/battery_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 0.0 -0.0413"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/battery_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_driver_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.06516422377745928 0.00010369138809958709 0.0019643303636313406"/>
+    <mass value="0.10665515793282736"/>
+    <inertia ixx="2.8e-05" ixy="-0.0" ixz="-2e-06" iyy="6.5e-05" iyz="-0.0" izz="9.2e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 0.0 -0.0413"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/motor_driver_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 0.0 -0.0413"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/motor_driver_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.10912892590527923 0.0004964844372421098 0.02425710718110105"/>
+    <mass value="0.07073520015454082"/>
+    <inertia ixx="3e-05" ixy="-1e-06" ixz="-6e-06" iyy="5.9e-05" iyz="-0.0" izz="7e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.2286"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.2286"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="stop_button_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="8.539967927267966e-08 -7.663558223292011e-07 0.004639273969484714"/>
+    <mass value="0.12115276971356706"/>
+    <inertia ixx="2.3e-05" ixy="-0.0" ixz="0.0" iyy="2.3e-05" iyz="-0.0" izz="7e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.2 -0.055 -0.2286"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/stop_button_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.2 -0.055 -0.2286"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/stop_button_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="start_button_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-2.8771165727636827e-09 1.226677440180346e-09 -0.005434768157047576"/>
+    <mass value="0.0299073068285262"/>
+    <inertia ixx="3e-06" ixy="-0.0" ixz="-0.0" iyy="3e-06" iyz="0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.2 -0.08 -0.2286"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/start_button_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.2 -0.08 -0.2286"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/start_button_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lcd_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.01669160277742715 0.367682299443574 0.003312733559261649"/>
+    <mass value="0.03846989742765855"/>
+    <inertia ixx="2.9e-05" ixy="0.0" ixz="-0.0" iyy="7e-06" iyz="-0.0" izz="3.5e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.2169 0.2002 -0.2236"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/lcd_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.2169 0.2002 -0.2236"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/lcd_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_profile_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.21730488471708878 -0.04100104605823618 0.32499999999999946"/>
+    <mass value="1.524271892912698"/>
+    <inertia ixx="0.053904" ixy="0.0" ixz="-0.0" iyy="0.053904" iyz="-0.0" izz="0.000475"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.25 -0.0413"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_profile_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.25 -0.0413"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_profile_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_profile_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.21730488471709003 -0.45900104605823666 0.3250000000000018"/>
+    <mass value="1.5242718929126946"/>
+    <inertia ixx="0.053904" ixy="0.0" ixz="0.0" iyy="0.053904" iyz="-0.0" izz="0.000475"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.25 -0.0413"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_profile_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.25 -0.0413"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_profile_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_stand_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.008300003725290356 -0.4263000031143428 -0.09121574275078215"/>
+    <mass value="1.4265530250000034"/>
+    <inertia ixx="0.03839" ixy="-0.0" ixz="0.0" iyy="0.03839" iyz="0.0" izz="0.000726"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.209 -0.2173 -0.6913"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_stand_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.209 -0.2173 -0.6913"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_stand_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_stand_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.4263000037252904 -0.008299996274709787 -0.09121574275078148"/>
+    <mass value="1.4265530249999918"/>
+    <inertia ixx="0.03839" ixy="0.0" ixz="-0.0" iyy="0.03839" iyz="0.0" izz="0.000726"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.209 -0.2173 -0.6913"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_stand_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.209 -0.2173 -0.6913"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_stand_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="container_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.7252895490613724e-09 -0.17499999688565857 -0.14443191498186225"/>
+    <mass value="1.382044480681824"/>
+    <inertia ixx="0.029717" ixy="0.0" ixz="-0.0" iyy="0.02156" iyz="0.0" izz="0.034313"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.1125 -0.175 -0.695"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/container_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.1125 -0.175 -0.695"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/container_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_rail_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.29654270835162483 -0.05634270151199186 -0.08755729537366541"/>
+    <mass value="0.0882340000000005"/>
+    <inertia ixx="2e-06" ixy="-1e-06" ixz="1e-06" iyy="0.00058" iyz="-1e-06" izz="0.000581"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.187 -0.2393 -0.7836"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_rail_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.187 -0.2393 -0.7836"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_rail_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_rail_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.07745729164837524 -0.42225729848800825 -0.08755729537366541"/>
+    <mass value="0.0882340000000005"/>
+    <inertia ixx="2e-06" ixy="1e-06" ixz="1e-06" iyy="0.00058" iyz="1e-06" izz="0.000581"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.187 -0.2393 -0.7836"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_rail_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.187 -0.2393 -0.7836"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_rail_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_arm_base_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.022080094576371667 -0.005098045774781429 -0.03789610522886222"/>
+    <mass value="0.05490972326898037"/>
+    <inertia ixx="2.8e-05" ixy="2e-06" ixz="-5e-06" iyy="4.4e-05" iyz="0.0" izz="2.4e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.2393 0.209 -0.7836"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_arm_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.2393 0.209 -0.7836"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_arm_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_arm_base_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.022080094576371778 0.005098046385728805 -0.03789610522886222"/>
+    <mass value="0.05490972326898039"/>
+    <inertia ixx="2.8e-05" ixy="-2e-06" ixz="-5e-06" iyy="4.4e-05" iyz="-0.0" izz="2.4e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.2393 -0.209 -0.7836"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_arm_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.2393 -0.209 -0.7836"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_arm_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_servo_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0069094533606938735 -0.024834862621596898 -0.006909784901761307"/>
+    <mass value="0.2658066667549286"/>
+    <inertia ixx="6.1e-05" ixy="-2e-06" ixz="-1.5e-05" iyy="4.7e-05" iyz="-2e-06" izz="6.1e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.279576 0.2085 -0.757068"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_servo_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.279576 0.2085 -0.757068"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_servo_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_servo_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.006909453562585821 0.02483486185751843 -0.0069097852078543465"/>
+    <mass value="0.26580668765886695"/>
+    <inertia ixx="6.1e-05" ixy="2e-06" ixz="-1.5e-05" iyy="4.7e-05" iyz="2e-06" izz="6.1e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.279576 -0.2085 -0.757068"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_servo_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.279576 -0.2085 -0.757068"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_servo_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_arm1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.08603695150777141 0.005258795151168755 0.12287295979492441"/>
+    <mass value="0.169561719796379"/>
+    <inertia ixx="0.001128" ixy="0.0" ixz="-0.000761" iyy="0.001698" iyz="0.0" izz="0.000574"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.279576 0.2063 -0.757068"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_arm1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.279576 0.2063 -0.757068"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_arm1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_arm1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.08603695150777163 -0.0052587945402214065 0.12287295979492585"/>
+    <mass value="0.16956171979637893"/>
+    <inertia ixx="0.001128" ixy="-0.0" ixz="-0.000761" iyy="0.001698" iyz="-0.0" izz="0.000574"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.279576 -0.2063 -0.757068"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_arm1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.279576 -0.2063 -0.757068"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_arm1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_arm2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.1343294955579269 -0.012762334715663987 -0.07832486820850026"/>
+    <mass value="0.2819105990716076"/>
+    <inertia ixx="0.000864" ixy="-7.3e-05" ixz="0.001389" iyy="0.003248" iyz="4.2e-05" izz="0.002443"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.451649 0.2063 -1.002814"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_arm2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.451649 0.2063 -1.002814"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/right_arm2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_arm2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.1343294945224583 0.012762335298527827 -0.07832486760574198"/>
+    <mass value="0.2819106016339997"/>
+    <inertia ixx="0.000864" ixy="7.3e-05" ixz="0.001389" iyy="0.003248" iyz="-4.2e-05" izz="0.002443"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.451649 -0.2063 -1.002814"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_arm2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.451649 -0.2063 -1.002814"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/left_arm2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="swiper_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.010363258731698632 -0.22449998788808292 0.013069429451974424"/>
+    <mass value="0.07057305314980042"/>
+    <inertia ixx="0.001242" ixy="-0.0" ixz="-3e-06" iyy="7e-06" iyz="0.0" izz="0.001238"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.737632 -0.2245 -0.818649"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/swiper_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.737632 -0.2245 -0.818649"/>
+    <geometry>
+      <mesh filename="package://kasimx_description/meshes/swiper_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="bottom_panel" type="fixed">
+  <origin rpy="0 0 0" xyz="0.25 0.0 0.0363"/>
+  <parent link="base_link"/>
+  <child link="bottom_panel_1"/>
+</joint>
+
+<joint name="right_panel" type="fixed">
+  <origin rpy="0 0 0" xyz="0.25 -0.25 0.1236"/>
+  <parent link="base_link"/>
+  <child link="right_panel_1"/>
+</joint>
+
+<joint name="left_panel" type="fixed">
+  <origin rpy="0 0 0" xyz="0.25 0.25 0.1236"/>
+  <parent link="base_link"/>
+  <child link="left_panel_1"/>
+</joint>
+
+<joint name="back_panel" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.25 0.0 0.2236"/>
+  <parent link="base_link"/>
+  <child link="back_panel_1"/>
+</joint>
+
+<joint name="front_panel" type="fixed">
+  <origin rpy="0 0 0" xyz="0.25 0.0 0.2236"/>
+  <parent link="base_link"/>
+  <child link="front_panel_1"/>
+</joint>
+
+<joint name="top_panel" type="fixed">
+  <origin rpy="0 0 0" xyz="0.25 0.0 0.2236"/>
+  <parent link="base_link"/>
+  <child link="top_panel_1"/>
+</joint>
+
+<joint name="right_motor" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 -0.19 0.0635"/>
+  <parent link="base_link"/>
+  <child link="right_motor_1"/>
+</joint>
+
+<joint name="left_motor" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.19 0.0635"/>
+  <parent link="base_link"/>
+  <child link="left_motor_1"/>
+</joint>
+
+<joint name="right_hub" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 -0.0026 0.0"/>
+  <parent link="right_motor_1"/>
+  <child link="right_hub_1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="left_hub" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 0.0026 0.0"/>
+  <parent link="left_motor_1"/>
+  <child link="left_hub_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="right_wheel" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 -0.026 0.0"/>
+  <parent link="right_hub_1"/>
+  <child link="right_wheel_1"/>
+</joint>
+
+<joint name="right_tyre" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 -0.00647 0.0"/>
+  <parent link="right_wheel_1"/>
+  <child link="right_tyre_1"/>
+</joint>
+
+<joint name="left_wheel" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.026 0.0"/>
+  <parent link="left_hub_1"/>
+  <child link="left_wheel_1"/>
+</joint>
+
+<joint name="left_tyre" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.00647 0.0"/>
+  <parent link="left_wheel_1"/>
+  <child link="left_tyre_1"/>
+</joint>
+
+<joint name="front_caster" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.25 0.0 0.0"/>
+  <parent link="bottom_panel_1"/>
+  <child link="front_caster_1"/>
+</joint>
+
+<joint name="back_caster" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.25 0.0 0.0"/>
+  <parent link="bottom_panel_1"/>
+  <child link="back_caster_1"/>
+</joint>
+
+<joint name="battery" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.25 0.0 0.005"/>
+  <parent link="bottom_panel_1"/>
+  <child link="battery_1"/>
+</joint>
+
+<joint name="motor_driver" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.25 0.0 0.005"/>
+  <parent link="bottom_panel_1"/>
+  <child link="motor_driver_1"/>
+</joint>
+
+<joint name="lidar" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.25 0.0 0.005"/>
+  <parent link="top_panel_1"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="stop_button" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.45 0.055 0.005"/>
+  <parent link="top_panel_1"/>
+  <child link="stop_button_1"/>
+</joint>
+
+<joint name="start_button" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.45 0.08 0.005"/>
+  <parent link="top_panel_1"/>
+  <child link="start_button_1"/>
+</joint>
+
+<joint name="lcd" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.4669 -0.2002 0.0"/>
+  <parent link="top_panel_1"/>
+  <child link="lcd_1"/>
+</joint>
+
+<joint name="left_profile" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.25 0.25 0.005"/>
+  <parent link="bottom_panel_1"/>
+  <child link="left_profile_1"/>
+</joint>
+
+<joint name="right_profile" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.25 0.25 0.005"/>
+  <parent link="bottom_panel_1"/>
+  <child link="right_profile_1"/>
+</joint>
+
+<joint name="right_stand" type="fixed">
+  <origin rpy="0 0 0" xyz="0.209 -0.0327 0.65"/>
+  <parent link="right_profile_1"/>
+  <child link="right_stand_1"/>
+</joint>
+
+<joint name="left_stand" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.209 -0.0327 0.65"/>
+  <parent link="left_profile_1"/>
+  <child link="left_stand_1"/>
+</joint>
+
+<joint name="container" type="fixed">
+  <origin rpy="0 0 0" xyz="0.2995 -0.0643 -0.0886"/>
+  <parent link="left_rail_1"/>
+  <child link="container_1"/>
+</joint>
+
+<joint name="left_rail" type="fixed">
+  <origin rpy="0 0 0" xyz="0.022 0.022 0.0923"/>
+  <parent link="left_stand_1"/>
+  <child link="left_rail_1"/>
+</joint>
+
+<joint name="right_rail" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.022 0.022 0.0923"/>
+  <parent link="right_stand_1"/>
+  <child link="right_rail_1"/>
+</joint>
+
+<joint name="right_arm_base" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0303 -0.4263 0.0923"/>
+  <parent link="right_stand_1"/>
+  <child link="right_arm_base_1"/>
+</joint>
+
+<joint name="left_arm_base" type="fixed">
+  <origin rpy="0 0 0" xyz="0.4483 -0.0083 0.0923"/>
+  <parent link="left_stand_1"/>
+  <child link="left_arm_base_1"/>
+</joint>
+
+<joint name="right_servo1" type="fixed">
+  <origin rpy="0 0 0" xyz="0.040276 0.0005 -0.026532"/>
+  <parent link="right_arm_base_1"/>
+  <child link="right_servo_1"/>
+</joint>
+
+<joint name="left_servo1" type="fixed">
+  <origin rpy="0 0 0" xyz="0.040276 -0.0005 -0.026532"/>
+  <parent link="left_arm_base_1"/>
+  <child link="left_servo_1"/>
+</joint>
+
+<joint name="right_arm1" type="revolute">
+  <origin rpy="0 0 0" xyz="0.0 0.0022 0.0"/>
+  <parent link="right_servo_1"/>
+  <child link="right_arm1_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+  <limit effort="30" velocity="1.0" lower="-0.65" upper="0.22" />
+</joint>
+
+<joint name="left_arm1" type="revolute">
+  <origin rpy="0 0 0" xyz="0.0 -0.0022 0.0"/>
+  <parent link="left_servo_1"/>
+  <child link="left_arm1_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+  <limit effort="30" velocity="1.0" lower="-0.65" upper="0.22" />
+</joint>
+
+<joint name="right_arm2" type="revolute">
+  <origin rpy="0 0 0" xyz="0.172073 0.0 0.245746"/>
+  <parent link="right_arm1_1"/>
+  <child link="right_arm2_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+  <limit effort="30" velocity="1.0" lower="0" upper="1.5707" />
+</joint>
+
+<joint name="left_arm2" type="revolute">
+  <origin rpy="0 0 0" xyz="0.172073 0.0 0.245746"/>
+  <parent link="left_arm1_1"/>
+  <child link="left_arm2_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+  <!--limit effort="30" velocity="1.0" lower="-1.5707" upper="1.5707" /-->
+  <limit effort="30" velocity="1.0" lower="0" upper="1.5707" />
+  <!--mimic joint="right_arm2" multiplier="1" offset="0" /-->
+</joint>
+
+<joint name="left_swiper" type="fixed">
+  <origin rpy="0 0 0" xyz="0.285983 0.0182 -0.184165"/>
+  <parent link="left_arm2_1"/>
+  <child link="swiper_1"/>
+</joint>
+
+
+</robot>

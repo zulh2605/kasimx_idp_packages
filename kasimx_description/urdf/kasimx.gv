@@ -1,0 +1,119 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"back_panel_1" [label="back_panel_1"];
+"bottom_panel_1" [label="bottom_panel_1"];
+"back_caster_1" [label="back_caster_1"];
+"battery_1" [label="battery_1"];
+"front_caster_1" [label="front_caster_1"];
+"left_profile_1" [label="left_profile_1"];
+"left_stand_1" [label="left_stand_1"];
+"left_arm_base_1" [label="left_arm_base_1"];
+"left_servo_1" [label="left_servo_1"];
+"left_arm1_1" [label="left_arm1_1"];
+"left_arm2_1" [label="left_arm2_1"];
+"swiper_1" [label="swiper_1"];
+"left_rail_1" [label="left_rail_1"];
+"container_1" [label="container_1"];
+"motor_driver_1" [label="motor_driver_1"];
+"right_profile_1" [label="right_profile_1"];
+"right_stand_1" [label="right_stand_1"];
+"right_arm_base_1" [label="right_arm_base_1"];
+"right_servo_1" [label="right_servo_1"];
+"right_arm1_1" [label="right_arm1_1"];
+"right_arm2_1" [label="right_arm2_1"];
+"right_rail_1" [label="right_rail_1"];
+"front_panel_1" [label="front_panel_1"];
+"left_motor_1" [label="left_motor_1"];
+"left_hub_1" [label="left_hub_1"];
+"left_wheel_1" [label="left_wheel_1"];
+"left_tyre_1" [label="left_tyre_1"];
+"left_panel_1" [label="left_panel_1"];
+"right_motor_1" [label="right_motor_1"];
+"right_hub_1" [label="right_hub_1"];
+"right_wheel_1" [label="right_wheel_1"];
+"right_tyre_1" [label="right_tyre_1"];
+"right_panel_1" [label="right_panel_1"];
+"top_panel_1" [label="top_panel_1"];
+"lcd_1" [label="lcd_1"];
+"lidar_1" [label="lidar_1"];
+"start_button_1" [label="start_button_1"];
+"stop_button_1" [label="stop_button_1"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "back_panel" [label="xyz: -0.25 0 0.2236 \nrpy: 0 -0 0"]
+"back_panel" -> "back_panel_1"
+"base_link" -> "bottom_panel" [label="xyz: 0.25 0 0.0363 \nrpy: 0 -0 0"]
+"bottom_panel" -> "bottom_panel_1"
+"bottom_panel_1" -> "back_caster" [label="xyz: -0.25 0 0 \nrpy: 0 -0 0"]
+"back_caster" -> "back_caster_1"
+"bottom_panel_1" -> "battery" [label="xyz: -0.25 0 0.005 \nrpy: 0 -0 0"]
+"battery" -> "battery_1"
+"bottom_panel_1" -> "front_caster" [label="xyz: -0.25 0 0 \nrpy: 0 -0 0"]
+"front_caster" -> "front_caster_1"
+"bottom_panel_1" -> "left_profile" [label="xyz: -0.25 0.25 0.005 \nrpy: 0 -0 0"]
+"left_profile" -> "left_profile_1"
+"left_profile_1" -> "left_stand" [label="xyz: -0.209 -0.0327 0.65 \nrpy: 0 -0 0"]
+"left_stand" -> "left_stand_1"
+"left_stand_1" -> "left_arm_base" [label="xyz: 0.4483 -0.0083 0.0923 \nrpy: 0 -0 0"]
+"left_arm_base" -> "left_arm_base_1"
+"left_arm_base_1" -> "left_servo1" [label="xyz: 0.040276 -0.0005 -0.026532 \nrpy: 0 -0 0"]
+"left_servo1" -> "left_servo_1"
+"left_servo_1" -> "left_arm1" [label="xyz: 0 -0.0022 0 \nrpy: 0 -0 0"]
+"left_arm1" -> "left_arm1_1"
+"left_arm1_1" -> "left_arm2" [label="xyz: 0.172073 0 0.245746 \nrpy: 0 -0 0"]
+"left_arm2" -> "left_arm2_1"
+"left_arm2_1" -> "left_swiper" [label="xyz: 0.285983 0.0182 -0.184165 \nrpy: 0 -0 0"]
+"left_swiper" -> "swiper_1"
+"left_stand_1" -> "left_rail" [label="xyz: 0.022 0.022 0.0923 \nrpy: 0 -0 0"]
+"left_rail" -> "left_rail_1"
+"left_rail_1" -> "container" [label="xyz: 0.2995 -0.0643 -0.0886 \nrpy: 0 -0 0"]
+"container" -> "container_1"
+"bottom_panel_1" -> "motor_driver" [label="xyz: -0.25 0 0.005 \nrpy: 0 -0 0"]
+"motor_driver" -> "motor_driver_1"
+"bottom_panel_1" -> "right_profile" [label="xyz: -0.25 0.25 0.005 \nrpy: 0 -0 0"]
+"right_profile" -> "right_profile_1"
+"right_profile_1" -> "right_stand" [label="xyz: 0.209 -0.0327 0.65 \nrpy: 0 -0 0"]
+"right_stand" -> "right_stand_1"
+"right_stand_1" -> "right_arm_base" [label="xyz: 0.0303 -0.4263 0.0923 \nrpy: 0 -0 0"]
+"right_arm_base" -> "right_arm_base_1"
+"right_arm_base_1" -> "right_servo1" [label="xyz: 0.040276 0.0005 -0.026532 \nrpy: 0 -0 0"]
+"right_servo1" -> "right_servo_1"
+"right_servo_1" -> "right_arm1" [label="xyz: 0 0.0022 0 \nrpy: 0 -0 0"]
+"right_arm1" -> "right_arm1_1"
+"right_arm1_1" -> "right_arm2" [label="xyz: 0.172073 0 0.245746 \nrpy: 0 -0 0"]
+"right_arm2" -> "right_arm2_1"
+"right_stand_1" -> "right_rail" [label="xyz: -0.022 0.022 0.0923 \nrpy: 0 -0 0"]
+"right_rail" -> "right_rail_1"
+"base_link" -> "front_panel" [label="xyz: 0.25 0 0.2236 \nrpy: 0 -0 0"]
+"front_panel" -> "front_panel_1"
+"base_link" -> "left_motor" [label="xyz: 0 0.19 0.0635 \nrpy: 0 -0 0"]
+"left_motor" -> "left_motor_1"
+"left_motor_1" -> "left_hub" [label="xyz: 0 0.0026 0 \nrpy: 0 -0 0"]
+"left_hub" -> "left_hub_1"
+"left_hub_1" -> "left_wheel" [label="xyz: 0 0.026 0 \nrpy: 0 -0 0"]
+"left_wheel" -> "left_wheel_1"
+"left_wheel_1" -> "left_tyre" [label="xyz: 0 0.00647 0 \nrpy: 0 -0 0"]
+"left_tyre" -> "left_tyre_1"
+"base_link" -> "left_panel" [label="xyz: 0.25 0.25 0.1236 \nrpy: 0 -0 0"]
+"left_panel" -> "left_panel_1"
+"base_link" -> "right_motor" [label="xyz: 0 -0.19 0.0635 \nrpy: 0 -0 0"]
+"right_motor" -> "right_motor_1"
+"right_motor_1" -> "right_hub" [label="xyz: 0 -0.0026 0 \nrpy: 0 -0 0"]
+"right_hub" -> "right_hub_1"
+"right_hub_1" -> "right_wheel" [label="xyz: 0 -0.026 0 \nrpy: 0 -0 0"]
+"right_wheel" -> "right_wheel_1"
+"right_wheel_1" -> "right_tyre" [label="xyz: 0 -0.00647 0 \nrpy: 0 -0 0"]
+"right_tyre" -> "right_tyre_1"
+"base_link" -> "right_panel" [label="xyz: 0.25 -0.25 0.1236 \nrpy: 0 -0 0"]
+"right_panel" -> "right_panel_1"
+"base_link" -> "top_panel" [label="xyz: 0.25 0 0.2236 \nrpy: 0 -0 0"]
+"top_panel" -> "top_panel_1"
+"top_panel_1" -> "lcd" [label="xyz: -0.4669 -0.2002 0 \nrpy: 0 -0 0"]
+"lcd" -> "lcd_1"
+"top_panel_1" -> "lidar" [label="xyz: -0.25 0 0.005 \nrpy: 0 -0 0"]
+"lidar" -> "lidar_1"
+"top_panel_1" -> "start_button" [label="xyz: -0.45 0.08 0.005 \nrpy: 0 -0 0"]
+"start_button" -> "start_button_1"
+"top_panel_1" -> "stop_button" [label="xyz: -0.45 0.055 0.005 \nrpy: 0 -0 0"]
+"stop_button" -> "stop_button_1"
+}

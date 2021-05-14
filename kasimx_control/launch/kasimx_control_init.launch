@@ -1,0 +1,4 @@
+<?xml version="1.0" ?>
+<launch>
+  <node pkg="kasimx_control" type="init.py" name="kasimx_control_publisher" output="screen" />
+</launch>

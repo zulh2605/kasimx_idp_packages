@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<launch>
+  <param command="$(find xacro)/xacro $(find kasimx_description)/urdf/kasimx.xacro" name="robot_description"/>
+  <node args="-param robot_description -urdf -model kasimx" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
+  <include file="$(find kasimx_gazebo_ros)/launch/cafe_world1.launch">
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+  <include file="$(find kasimx_control)/launch/kasimx_control.launch"/>
+  <!--include file="$(find kasimx_control)/launch/kasimx_control_init.launch"/-->
+</launch>
+
