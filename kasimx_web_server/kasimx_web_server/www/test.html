@@ -1,0 +1,125 @@
+<!DOCTYPE html> 2
+<html>
+  3
+  <head>
+    4
+    <meta charset="utf-8" />
+    5 6
+    <script
+      type="text/javascript"
+      src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"
+    ></script>
+    7
+    <script
+      type="text/javascript"
+      src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"
+    ></script>
+    8 9
+    <script type="text/javascript" type="text/javascript">
+       10   // Connecting to ROS
+       11   // -----------------
+       12
+       13   var ros = new ROSLIB.Ros({
+       14     url : 'ws://localhost:9090'
+       15   });
+       16
+       17   ros.on('connection', function() {
+       18     console.log('Connected to websocket server.');
+       19   });
+       20
+       21   ros.on('error', function(error) {
+       22     console.log('Error connecting to websocket server: ', error);
+       23   });
+       24
+       25   ros.on('close', function() {
+       26     console.log('Connection to websocket server closed.');
+       27   });
+       28
+       29   // Publishing a Topic
+       30   // ------------------
+       31
+       32   var cmdVel = new ROSLIB.Topic({
+       33     ros : ros,
+       34     name : '/cmd_vel',
+       35     messageType : 'geometry_msgs/Twist'
+       36   });
+       37
+       38   var twist = new ROSLIB.Message({
+       39     linear : {
+       40       x : 0.1,
+       41       y : 0.2,
+       42       z : 0.3
+       43     },
+       44     angular : {
+       45       x : -0.1,
+       46       y : -0.2,
+       47       z : -0.3
+       48     }
+       49   });
+       50   cmdVel.publish(twist);
+       51
+       52   // Subscribing to a Topic
+       53   // ----------------------
+       54
+       55   var listener = new ROSLIB.Topic({
+       56     ros : ros,
+       57     name : '/listener',
+       58     messageType : 'std_msgs/String'
+       59   });
+       60
+       61   listener.subscribe(function(message) {
+       62     console.log('Received message on ' + listener.name + ': ' + message.data);
+       63     listener.unsubscribe();
+       64   });
+       65
+       66   // Calling a service
+       67   // -----------------
+       68
+       69   var addTwoIntsClient = new ROSLIB.Service({
+       70     ros : ros,
+       71     name : '/add_two_ints',
+       72     serviceType : 'rospy_tutorials/AddTwoInts'
+       73   });
+       74
+       75   var request = new ROSLIB.ServiceRequest({
+       76     a : 1,
+       77     b : 2
+       78   });
+       79
+       80   addTwoIntsClient.callService(request, function(result) {
+       81     console.log('Result for service call on '
+       82       + addTwoIntsClient.name
+       83       + ': '
+       84       + result.sum);
+       85   });
+       86
+       87   // Getting and setting a param value
+       88   // ---------------------------------
+       89
+       90   ros.getParams(function(params) {
+       91     console.log(params);
+       92   });
+       93
+       94   var maxVelX = new ROSLIB.Param({
+       95     ros : ros,
+       96     name : 'max_vel_y'
+       97   });
+       98
+       99   maxVelX.set(0.8);
+      100   maxVelX.get(function(value) {
+      101     console.log('MAX VAL: ' + value);
+      102   });
+      103
+    </script>
+    104
+  </head>
+  105 106
+  <body>
+    107
+    <h1>Simple roslib Example</h1>
+    108
+    <p>Check your Web Console for output.</p>
+    109
+  </body>
+  110
+</html>
